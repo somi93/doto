@@ -33,6 +33,7 @@ class TournamentController extends Controller
     }
 
     public function Participants($tournament){
+        $team = new TeamController;
         $data = DB::table('tournament_participants AS tp')
         ->join('tournaments AS t', 'tp.tournament_id', '=', 't.id')
         ->join('teams AS tm', 'tp.team_id', '=', 'tm.id');
@@ -41,30 +42,15 @@ class TournamentController extends Controller
         $data = $data->get();
         $participants = [];
         foreach($data as $participant){
-            $roster = $this->Roster($participant->id, $tournament->start);
+            $roster = $team->Roster($participant->id, $tournament->start);
             array_push($participants, (object) array('team_name' => $participant->team_name, 'team_logo' => $participant->team_logo, 'roster' => $roster));
         }
         return $participants;
     }
 
-    public function Roster($team, $time){
-        $data = DB::table('transfers AS t')
-                    ->join('players AS p', 't.player_id', '=', 'p.id')
-                    ->join('countries AS c', 'p.country_id', '=', 'c.id');
-        $data = $data->where('t.team_id',$team);
-        $data = $data->where('start', '<', $time);
-        $data = $data->where(function ($query) use ($time) {
-            $query->whereNull('end')
-                  ->orWhere('end', '>', $time);
-        });
-        $data = $data->select('p.first_name', 'p.last_name', 'p.nick', 'c.country_name', 'c.country_flag');
-        $data = $data->get();
-        return $data;
-    }
-
     public function Trophies($tournament){
         $data = DB::table('team_trophies AS t')->join('teams AS tm', 't.team_id', '=', 'tm.id');
-        $data = $data->where('t.tournament_id',$tournament);
+        $data = $data->where('t.tournament_id', $tournament);
         $data = $data->select('t.position', 'tm.team_name', 'tm.team_logo');
         $data = $data->get();
         return $data;

@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.countdown.css') }}">
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.countdown.js') }}"></script>
 </head>
 <body>
     <div class="container-box">
@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="img/logo.png">
+                        <img src="{{ asset('img/logo.png') }}">
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
@@ -48,9 +48,9 @@
             </div>
             <div class="col-sm-4 doto-sidebar">
                 <div class="ad-container hidden-xs">
-                    <img src="img/ads/dota-2-international-championship.jpg" style="width:100%">
-                    <img src="img/ads/strix.jpg" style="width:100%">
-                    <img src="img/ads/d2cl.png" style="width:100%">
+                    <img src="{{ asset('img/ads/dota-2-international-championship.jpg') }}" style="width:100%">
+                    <img src="{{ asset('img/ads/strix.jpg') }}" style="width:100%">
+                    <img src="{{ asset('img/ads/d2cl.png') }}" style="width:100%">
                 </div>
             </div>
         </div>
@@ -61,6 +61,7 @@
     {{--Scripts--}}
     <script src="{{ asset('js/angular/angular.min.js') }}"></script>
     <script src="{{ asset('js/angular/app.js') }}"></script>
+    <script src="{{ asset('js/moment/moment.min.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

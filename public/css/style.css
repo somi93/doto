@@ -22,7 +22,7 @@ body{ background: #3c3c3c; }
 }
 
 .navbar-nav{
-    margin-left: 100px;
+    margin-left: 70px;
 }
 
 .navbar li{
@@ -105,6 +105,15 @@ body{ background: #3c3c3c; }
 .team-banner a{
     color: #ccc !important;
 }
+.team-matches{
+    border-bottom:1px solid#666;
+}
+.team-matches:last-child{
+    border-bottom: none;
+}
+.team-matches span{
+    font-size: 12px;
+}
 /*Table*/
 .table-rank-container{
     padding: 0 !important;
@@ -127,6 +136,11 @@ body{ background: #3c3c3c; }
  }
 .table-rank a{
     color: #fff !important;
+}
+
+.rankingTeam:hover{
+    border:2px solid#567eae;
+    cursor:pointer;
 }
 
 /*Footer*/

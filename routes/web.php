@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/players/{id}', function () {
+    return view('player');
+});
+
 Route::get('/teams', function () {
     return view('teams');
+});
+
+Route::get('/teams/{id}', function () {
+    return view('team');
 });
 
 Route::get('/tournaments', function () {

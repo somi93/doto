@@ -23,3 +23,5 @@ Route::get('/regions', 'RegionController@regions');
 Route::get('/transfers', 'TransferController@transfers');
 Route::get('/tournaments', 'TournamentController@tournaments');
 Route::get('/tournament/participants', 'TournamentController@participants');
+Route::get('/matches', 'MatchesController@matches');
+Route::get('/players', 'PlayerController@players');
