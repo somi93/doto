@@ -6,8 +6,9 @@ $(function() {
     $('#countdown').countdown({
         timestamp: ts,
         callback: function(days, hours, minutes, seconds) {
-            var message = "Countdown To International 7<a href='index.php?page=admin' style='color:#ccc'>!</a>";
+            var message = "Countdown To International 7<a href='/admin' style='color:#ccc'>!</a>";
             note.html(message);
         }
     });
+
 });

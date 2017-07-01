@@ -115,6 +115,15 @@ body{ background: #3c3c3c; }
     font-size: 12px;
 }
 /*Table*/
+.table-admin{
+    background: #eee;
+    text-align: center;
+}
+.table-admin th{
+    text-align: center !important;
+}
+
+
 .table-rank-container{
     padding: 0 !important;
 }
@@ -143,6 +152,63 @@ body{ background: #3c3c3c; }
     cursor:pointer;
 }
 
+.scoreboard{
+    height: 96px;
+    width: 100%;
+    background: #292929;
+    border-radius: 8px;
+}
+.matchRightside, .matchLeftside {
+    width: 36%;
+}
+.team1Name, .team2Name {
+    float: left;
+    line-height: 8;
+    height: 84px;
+    margin-left: 4%;
+    overflow: hidden;
+    width: 60%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.team2Name {
+    margin-left: 0;
+    margin-right: 4%;
+}
+.matchRightside img, .matchLeftside img {
+    max-width: 100%;
+}
+.matchScore {
+     width: auto !important;
+ }
+.matchScore .position {
+    height: 64px !important;
+    width: 48px !important;
+    top: 8px !important;
+}
+.matchScore .digit {
+    top: 0px !important;
+    opacity: 1 !important;
+    height: 64px !important;
+    width: 48px !important;
+    line-height: 1.4 !important;
+    font-size: 45px !important;
+}
+.scoreboard img {
+    height: 84px;
+    margin-top: 6px;
+}
+.team1Name span, .team2Name span {
+    color: #bbb;
+    font: 28px Helvetica;
+    text-shadow: 1px 1px#000;
+}
+.match-roster{
+     border-top: 1px solid #444;
+ }
+.match-roster:first-child{
+    border-top: none;
+}
 /*Footer*/
 footer {
     background-image: url(outlets.png);
@@ -170,4 +236,13 @@ footer {
 
 .clear{
     clear: both;
+}
+
+.dropdown li{
+    border-bottom: 1px solid#ddd;
+    padding: 6px 4px;
+}
+
+.dropdown li:last-child{
+    border: none;
 }

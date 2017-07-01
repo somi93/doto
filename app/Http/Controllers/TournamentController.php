@@ -21,6 +21,26 @@ class TournamentController extends Controller
         foreach($data as $tournament){
             $tournament->participants = $this->Participants($tournament);
             $tournament->trophies = $this->Trophies($tournament->id);
+            $tournament->start = date(DATE_ATOM, $tournament->start);
+            if($tournament->strength == 1.1 || $tournament->strength == 1.2){
+                $tournament->strength = 'Minor';
+            } else if($tournament->strength == 1.3){
+                $tournament->strength = 'Premier';
+            } else if($tournament->strength == 1.4){
+                $tournament->strength = 'Major';
+            }
+        }
+        return json_decode($data);
+    }
+
+    public function BasicInfo($id){
+        $data = DB::table('tournaments');
+        $data = $data->where('id', $id);
+        $data = $data->orderBy('start', 'desc');
+        $data = $data->select('id', 'tournament_name', 'tournament_logo', 'tournament_type', 'number_of_participants', 'strength', 'start');
+        $data = $data->get();
+        foreach($data as $tournament){
+            $tournament->start = date(DATE_ATOM, $tournament->start);
             if($tournament->strength == 1.1 || $tournament->strength == 1.2){
                 $tournament->strength = 'Minor';
             } else if($tournament->strength == 1.3){
@@ -54,5 +74,21 @@ class TournamentController extends Controller
         $data = $data->select('t.position', 'tm.team_name', 'tm.team_logo');
         $data = $data->get();
         return $data;
+    }
+
+    public function Insert(Request $request){
+        $data = file_get_contents('php://input');
+        $data = json_decode($data);
+        $tournament = new Tournament();
+        $tournament->tournament_name = $data->name;
+        $tournament->tournament_logo = '';
+        $tournament->tournament_type = $data->type;
+        $tournament->number_of_participants = $data->numberOfTeams;
+        $tournament->strength = $data->tier;
+        $tournament->start = strtotime($data->start);
+        $tournament->end = strtotime($data->end);
+        $tournament->parent_id = $data->qualifier == '' ? null : $data->qualifier;
+        $tournament->save();
+        return 'Success';
     }
 }

@@ -27,10 +27,18 @@ Route::get('/teams/{id}', function () {
     return view('team');
 });
 
+Route::get('/match/{id}', function () {
+    return view('match');
+});
+
 Route::get('/tournaments', function () {
     return view('tournaments');
 });
 
 Route::get('/transfers', function () {
     return view('transfers');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
 });

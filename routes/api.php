@@ -25,3 +25,6 @@ Route::get('/tournaments', 'TournamentController@tournaments');
 Route::get('/tournament/participants', 'TournamentController@participants');
 Route::get('/matches', 'MatchesController@matches');
 Route::get('/players', 'PlayerController@players');
+
+
+Route::post('/tournaments', 'TournamentController@insert');

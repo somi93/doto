@@ -18,6 +18,7 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.countdown.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
 </head>
 <body>
     <div class="container-box">

@@ -86,10 +86,10 @@
                 </div>
                 <div class="col-sm-1" style="text-align:right">
                   <span style="color:#ccc">
-                    <a href="#">details</a>
+                    <a href="/match/@{{ match.id }}">details</a>
                   </span>
                 </div>
-            </div>
+        </div>
         </div>
         <div class="col-sm-12" style="background:#292929;border-radius:8px;padding:8px;margin-top:20px">
             <div class="col-sm-12" style="border-bottom:1px solid#666;padding:0;margin-bottom:5px;" align="center">
@@ -108,7 +108,7 @@
                             <span style="color:#ccc;font:14px Helvetica;">@{{ trophy.date }}</span>
                         </td>
                         <td style="border:1px solid#666">
-                            <a href="index.php?page=tournament&amp;id=19">
+                            <a href="#">
                                 <span style="color:#ccc;font:14px Helvetica;">@{{ trophy.tournament_name }}</span>
                             </a>
                         </td>
