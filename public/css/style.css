@@ -209,6 +209,10 @@ body{ background: #3c3c3c; }
 .match-roster:first-child{
     border-top: none;
 }
+
+.dropdown-menu{
+    left: 37% !important;
+}
 /*Footer*/
 footer {
     background-image: url(outlets.png);

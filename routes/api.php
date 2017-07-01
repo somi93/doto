@@ -22,9 +22,12 @@ Route::get('/countries', 'CountryController@countries');
 Route::get('/regions', 'RegionController@regions');
 Route::get('/transfers', 'TransferController@transfers');
 Route::get('/tournaments', 'TournamentController@tournaments');
-Route::get('/tournament/participants', 'TournamentController@participants');
+Route::get('/tournaments/participants', 'TournamentController@TourParticipants');
 Route::get('/matches', 'MatchesController@matches');
 Route::get('/players', 'PlayerController@players');
 
 
 Route::post('/tournaments', 'TournamentController@insert');
+Route::post('/tournamentParticipants', 'TournamentController@InsertParticipants');
+Route::post('/group', 'TournamentController@InsertGroup');
+Route::post('/trophy', 'TournamentController@InsertTrophy');
